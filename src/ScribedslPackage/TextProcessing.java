@@ -10,40 +10,40 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Text Processor</b></em>'.
+ * A representation of the model object '<em><b>Text Processing</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ScribedslPackage.TextProcessor#getText <em>Text</em>}</li>
- *   <li>{@link ScribedslPackage.TextProcessor#getToken <em>Token</em>}</li>
- *   <li>{@link ScribedslPackage.TextProcessor#getStem <em>Stem</em>}</li>
- *   <li>{@link ScribedslPackage.TextProcessor#getStopword <em>Stopword</em>}</li>
- *   <li>{@link ScribedslPackage.TextProcessor#getWordfrequency <em>Wordfrequency</em>}</li>
- *   <li>{@link ScribedslPackage.TextProcessor#getFile <em>File</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getText <em>Text</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getToken <em>Token</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getStem <em>Stem</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getStopword <em>Stopword</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getWordfrequency <em>Wordfrequency</em>}</li>
+ *   <li>{@link ScribedslPackage.TextProcessing#getProcesseddata <em>Processeddata</em>}</li>
  * </ul>
  *
- * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor()
+ * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing()
  * @model
  * @generated
  */
-public interface TextProcessor extends EObject {
+public interface TextProcessing extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Text</em>' containment reference.
 	 * @see #setText(Text)
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_Text()
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Text()
 	 * @model containment="true"
 	 * @generated
 	 */
 	Text getText();
 
 	/**
-	 * Sets the value of the '{@link ScribedslPackage.TextProcessor#getText <em>Text</em>}' containment reference.
+	 * Sets the value of the '{@link ScribedslPackage.TextProcessing#getText <em>Text</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Text</em>' containment reference.
@@ -58,7 +58,7 @@ public interface TextProcessor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Token</em>' containment reference list.
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_Token()
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Token()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -70,7 +70,7 @@ public interface TextProcessor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Stem</em>' containment reference list.
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_Stem()
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Stem()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -82,7 +82,7 @@ public interface TextProcessor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Stopword</em>' containment reference list.
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_Stopword()
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Stopword()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -94,14 +94,14 @@ public interface TextProcessor extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Wordfrequency</em>' reference.
 	 * @see #setWordfrequency(Map.Entry)
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_Wordfrequency()
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Wordfrequency()
 	 * @model mapType="ScribedslPackage.WordFrequency&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EInt&gt;"
 	 * @generated
 	 */
 	Map.Entry<String, Integer> getWordfrequency();
 
 	/**
-	 * Sets the value of the '{@link ScribedslPackage.TextProcessor#getWordfrequency <em>Wordfrequency</em>}' reference.
+	 * Sets the value of the '{@link ScribedslPackage.TextProcessing#getWordfrequency <em>Wordfrequency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Wordfrequency</em>' reference.
@@ -111,25 +111,15 @@ public interface TextProcessor extends EObject {
 	void setWordfrequency(Map.Entry<String, Integer> value);
 
 	/**
-	 * Returns the value of the '<em><b>File</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Processeddata</b></em>' containment reference list.
+	 * The list contents are of type {@link ScribedslPackage.ProcessedData}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>File</em>' containment reference.
-	 * @see #setFile(File)
-	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessor_File()
-	 * @model containment="true"
+	 * @return the value of the '<em>Processeddata</em>' containment reference list.
+	 * @see ScribedslPackage.ScribedslPackagePackage#getTextProcessing_Processeddata()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	File getFile();
+	EList<ProcessedData> getProcesseddata();
 
-	/**
-	 * Sets the value of the '{@link ScribedslPackage.TextProcessor#getFile <em>File</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>File</em>' containment reference.
-	 * @see #getFile()
-	 * @generated
-	 */
-	void setFile(File value);
-
-} // TextProcessor
+} // TextProcessing

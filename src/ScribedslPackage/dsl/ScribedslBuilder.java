@@ -3,13 +3,12 @@ package ScribedslPackage.dsl;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Map.Entry;
 
-import ScribedslPackage.ScribeDSLModel;
+import ScribedslPackage.ProcessedData;
 import ScribedslPackage.ScribedslPackageFactory;
 import ScribedslPackage.StopWord;
 import ScribedslPackage.Text;
-import ScribedslPackage.TextProcessor;
+import ScribedslPackage.TextProcessing;
 import ScribedslPackage.Token;
 
 public class ScribedslBuilder {
@@ -18,7 +17,7 @@ public class ScribedslBuilder {
 
     
     public Initial builder() {
-        return new ProcessedData(factory.createTextProcessor());
+        return new ProcessedDataImpl(factory.createTextProcessing());
     }
     
     public interface Initial {	
@@ -31,7 +30,7 @@ public class ScribedslBuilder {
     }
     
     public interface Tokenizer {
-    	public ScribeDSLModel build();
+    	public ProcessedData build();
     	public FilterStopWords filterStopWords();
     	public PerformStemming performStemming();
     	public AnalyseWordFrequency analyseWordFrequency();
@@ -40,32 +39,32 @@ public class ScribedslBuilder {
     public interface FilterStopWords {
     	public PerformStemming performStemming();
     	public AnalyseWordFrequency analyseWordFrequency();
-    	public ScribeDSLModel build();
+    	public ProcessedData build();
     }
     
     public interface PerformStemming {
     	public AnalyseWordFrequency analyseWordFrequency();
-    	public ScribeDSLModel build();
+    	public ProcessedData build();
     }
     
     public interface AnalyseWordFrequency {
-    	public ScribeDSLModel build();
+    	public ProcessedData build();
     }
     
-    public static class ProcessedData implements Initial, ReadText, Tokenizer, FilterStopWords, PerformStemming, AnalyseWordFrequency {
+    public static class ProcessedDataImpl implements Initial, ReadText, Tokenizer, FilterStopWords, PerformStemming, AnalyseWordFrequency {
 
-    	private TextProcessor processor;
+    	private TextProcessing processor;
     	private Text text;
     	
-        public ProcessedData(TextProcessor textProcessor) {
-        	this.processor = textProcessor;
+        public ProcessedDataImpl(TextProcessing textProcessing) {
+        	this.processor = textProcessing;
 	        this.text = factory.createText();
 	        
 	        try (BufferedReader br = new BufferedReader(new FileReader("StopWords.txt"))) {
 	            String line;
 	            while ((line = br.readLine()) != null) {
 	            	StopWord sw = factory.createStopWord();
-	            	sw.setName(line.trim());
+	            	sw.setValue(line.trim());
 	                processor.getStopword().add(sw);
 	            }
 	        } catch (IOException e) {
@@ -99,7 +98,7 @@ public class ScribedslBuilder {
         	String[] splitted = this.text.getValue().split(regex);
         	for (String s : splitted) {
         		Token tokenToAdd = factory.createToken();
-        		tokenToAdd.setName(s);
+        		tokenToAdd.setValue(s);
         		processor.getToken().add(tokenToAdd);
         	}
 			return this;
@@ -130,7 +129,7 @@ public class ScribedslBuilder {
 		}
         
 		@Override
-		public ScribeDSLModel build() {
+		public ProcessedData build() {
 			// TODO Auto-generated method stub
 			return null;
 		}

@@ -58,14 +58,13 @@ public class ScribedslPackageFactoryImpl extends EFactoryImpl implements Scribed
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ScribedslPackagePackage.SCRIBE_DSL_MODEL: return createScribeDSLModel();
-			case ScribedslPackagePackage.TEXT_PROCESSOR: return createTextProcessor();
+			case ScribedslPackagePackage.PROCESSED_DATA: return createProcessedData();
+			case ScribedslPackagePackage.TEXT_PROCESSING: return createTextProcessing();
 			case ScribedslPackagePackage.WORD_FREQUENCY: return (EObject)createWordFrequency();
 			case ScribedslPackagePackage.TEXT: return createText();
 			case ScribedslPackagePackage.TOKEN: return createToken();
 			case ScribedslPackagePackage.STEM: return createStem();
 			case ScribedslPackagePackage.STOP_WORD: return createStopWord();
-			case ScribedslPackagePackage.FILE: return createFile();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,9 +76,9 @@ public class ScribedslPackageFactoryImpl extends EFactoryImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public ScribeDSLModel createScribeDSLModel() {
-		ScribeDSLModelImpl scribeDSLModel = new ScribeDSLModelImpl();
-		return scribeDSLModel;
+	public ProcessedData createProcessedData() {
+		ProcessedDataImpl processedData = new ProcessedDataImpl();
+		return processedData;
 	}
 
 	/**
@@ -88,9 +87,9 @@ public class ScribedslPackageFactoryImpl extends EFactoryImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public TextProcessor createTextProcessor() {
-		TextProcessorImpl textProcessor = new TextProcessorImpl();
-		return textProcessor;
+	public TextProcessing createTextProcessing() {
+		TextProcessingImpl textProcessing = new TextProcessingImpl();
+		return textProcessing;
 	}
 
 	/**
@@ -145,17 +144,6 @@ public class ScribedslPackageFactoryImpl extends EFactoryImpl implements Scribed
 	public StopWord createStopWord() {
 		StopWordImpl stopWord = new StopWordImpl();
 		return stopWord;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public File createFile() {
-		FileImpl file = new FileImpl();
-		return file;
 	}
 
 	/**

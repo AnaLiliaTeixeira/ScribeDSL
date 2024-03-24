@@ -2,14 +2,13 @@
  */
 package ScribedslPackage.impl;
 
-import ScribedslPackage.File;
-import ScribedslPackage.ScribeDSLModel;
+import ScribedslPackage.ProcessedData;
 import ScribedslPackage.ScribedslPackageFactory;
 import ScribedslPackage.ScribedslPackagePackage;
 import ScribedslPackage.Stem;
 import ScribedslPackage.StopWord;
 import ScribedslPackage.Text;
-import ScribedslPackage.TextProcessor;
+import ScribedslPackage.TextProcessing;
 import ScribedslPackage.Token;
 
 import java.util.Map;
@@ -33,14 +32,14 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass scribeDSLModelEClass = null;
+	private EClass processedDataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass textProcessorEClass = null;
+	private EClass textProcessingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,13 +75,6 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	private EClass stopWordEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fileEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -150,8 +142,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EClass getScribeDSLModel() {
-		return scribeDSLModelEClass;
+	public EClass getProcessedData() {
+		return processedDataEClass;
 	}
 
 	/**
@@ -160,8 +152,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getScribeDSLModel_Textprocessor() {
-		return (EReference)scribeDSLModelEClass.getEStructuralFeatures().get(0);
+	public EClass getTextProcessing() {
+		return textProcessingEClass;
 	}
 
 	/**
@@ -170,8 +162,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EClass getTextProcessor() {
-		return textProcessorEClass;
+	public EReference getTextProcessing_Text() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -180,8 +172,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getTextProcessor_Text() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(0);
+	public EReference getTextProcessing_Token() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -190,8 +182,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getTextProcessor_Token() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(1);
+	public EReference getTextProcessing_Stem() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -200,8 +192,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getTextProcessor_Stem() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(2);
+	public EReference getTextProcessing_Stopword() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -210,8 +202,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getTextProcessor_Stopword() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(3);
+	public EReference getTextProcessing_Wordfrequency() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -220,18 +212,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EReference getTextProcessor_Wordfrequency() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTextProcessor_File() {
-		return (EReference)textProcessorEClass.getEStructuralFeatures().get(5);
+	public EReference getTextProcessing_Processeddata() {
+		return (EReference)textProcessingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -300,7 +282,7 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EAttribute getToken_Name() {
+	public EAttribute getToken_Value() {
 		return (EAttribute)tokenEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -320,7 +302,7 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStem_Name() {
+	public EAttribute getStem_Value() {
 		return (EAttribute)stemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -340,28 +322,8 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 	 * @generated
 	 */
 	@Override
-	public EAttribute getStopWord_Name() {
+	public EAttribute getStopWord_Value() {
 		return (EAttribute)stopWordEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getFile() {
-		return fileEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFile_Text() {
-		return (EReference)fileEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -393,16 +355,15 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 		isCreated = true;
 
 		// Create classes and their features
-		scribeDSLModelEClass = createEClass(SCRIBE_DSL_MODEL);
-		createEReference(scribeDSLModelEClass, SCRIBE_DSL_MODEL__TEXTPROCESSOR);
+		processedDataEClass = createEClass(PROCESSED_DATA);
 
-		textProcessorEClass = createEClass(TEXT_PROCESSOR);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__TEXT);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__TOKEN);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__STEM);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__STOPWORD);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__WORDFREQUENCY);
-		createEReference(textProcessorEClass, TEXT_PROCESSOR__FILE);
+		textProcessingEClass = createEClass(TEXT_PROCESSING);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__TEXT);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__TOKEN);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__STEM);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__STOPWORD);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__WORDFREQUENCY);
+		createEReference(textProcessingEClass, TEXT_PROCESSING__PROCESSEDDATA);
 
 		wordFrequencyEClass = createEClass(WORD_FREQUENCY);
 		createEAttribute(wordFrequencyEClass, WORD_FREQUENCY__KEY);
@@ -412,16 +373,13 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 		createEAttribute(textEClass, TEXT__VALUE);
 
 		tokenEClass = createEClass(TOKEN);
-		createEAttribute(tokenEClass, TOKEN__NAME);
+		createEAttribute(tokenEClass, TOKEN__VALUE);
 
 		stemEClass = createEClass(STEM);
-		createEAttribute(stemEClass, STEM__NAME);
+		createEAttribute(stemEClass, STEM__VALUE);
 
 		stopWordEClass = createEClass(STOP_WORD);
-		createEAttribute(stopWordEClass, STOP_WORD__NAME);
-
-		fileEClass = createEClass(FILE);
-		createEReference(fileEClass, FILE__TEXT);
+		createEAttribute(stopWordEClass, STOP_WORD__VALUE);
 	}
 
 	/**
@@ -454,16 +412,15 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(scribeDSLModelEClass, ScribeDSLModel.class, "ScribeDSLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScribeDSLModel_Textprocessor(), this.getTextProcessor(), null, "textprocessor", null, 1, -1, ScribeDSLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(processedDataEClass, ProcessedData.class, "ProcessedData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(textProcessorEClass, TextProcessor.class, "TextProcessor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextProcessor_Text(), this.getText(), null, "text", null, 0, 1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextProcessor_Token(), this.getToken(), null, "token", null, 0, -1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextProcessor_Stem(), this.getStem(), null, "stem", null, 0, -1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextProcessor_Stopword(), this.getStopWord(), null, "stopword", null, 0, -1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextProcessor_Wordfrequency(), this.getWordFrequency(), null, "wordfrequency", null, 0, 1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextProcessor_File(), this.getFile(), null, "file", null, 0, 1, TextProcessor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(textProcessingEClass, TextProcessing.class, "TextProcessing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTextProcessing_Text(), this.getText(), null, "text", null, 0, 1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextProcessing_Token(), this.getToken(), null, "token", null, 0, -1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextProcessing_Stem(), this.getStem(), null, "stem", null, 0, -1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextProcessing_Stopword(), this.getStopWord(), null, "stopword", null, 0, -1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextProcessing_Wordfrequency(), this.getWordFrequency(), null, "wordfrequency", null, 0, 1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextProcessing_Processeddata(), this.getProcessedData(), null, "processeddata", null, 1, -1, TextProcessing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(wordFrequencyEClass, Map.Entry.class, "WordFrequency", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getWordFrequency_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -473,16 +430,13 @@ public class ScribedslPackagePackageImpl extends EPackageImpl implements Scribed
 		initEAttribute(getText_Value(), ecorePackage.getEString(), "value", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tokenEClass, Token.class, "Token", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getToken_Name(), ecorePackage.getEString(), "name", null, 0, 1, Token.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getToken_Value(), ecorePackage.getEString(), "value", null, 0, 1, Token.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stemEClass, Stem.class, "Stem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Stem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStem_Value(), ecorePackage.getEString(), "value", null, 0, 1, Stem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stopWordEClass, StopWord.class, "StopWord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStopWord_Name(), ecorePackage.getEString(), "name", null, 0, 1, StopWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFile_Text(), this.getText(), null, "text", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStopWord_Value(), ecorePackage.getEString(), "value", null, 0, 1, StopWord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -22,22 +22,22 @@ public interface ScribedslPackageFactory extends EFactory {
 	ScribedslPackageFactory eINSTANCE = ScribedslPackage.impl.ScribedslPackageFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Scribe DSL Model</em>'.
+	 * Returns a new object of class '<em>Processed Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Scribe DSL Model</em>'.
+	 * @return a new object of class '<em>Processed Data</em>'.
 	 * @generated
 	 */
-	ScribeDSLModel createScribeDSLModel();
+	ProcessedData createProcessedData();
 
 	/**
-	 * Returns a new object of class '<em>Text Processor</em>'.
+	 * Returns a new object of class '<em>Text Processing</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Processor</em>'.
+	 * @return a new object of class '<em>Text Processing</em>'.
 	 * @generated
 	 */
-	TextProcessor createTextProcessor();
+	TextProcessing createTextProcessing();
 
 	/**
 	 * Returns a new object of class '<em>Text</em>'.
@@ -74,15 +74,6 @@ public interface ScribedslPackageFactory extends EFactory {
 	 * @generated
 	 */
 	StopWord createStopWord();
-
-	/**
-	 * Returns a new object of class '<em>File</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>File</em>'.
-	 * @generated
-	 */
-	File createFile();
 
 	/**
 	 * Returns the package supported by this factory.

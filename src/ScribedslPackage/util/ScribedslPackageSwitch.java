@@ -68,15 +68,15 @@ public class ScribedslPackageSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ScribedslPackagePackage.SCRIBE_DSL_MODEL: {
-				ScribeDSLModel scribeDSLModel = (ScribeDSLModel)theEObject;
-				T result = caseScribeDSLModel(scribeDSLModel);
+			case ScribedslPackagePackage.PROCESSED_DATA: {
+				ProcessedData processedData = (ProcessedData)theEObject;
+				T result = caseProcessedData(processedData);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScribedslPackagePackage.TEXT_PROCESSOR: {
-				TextProcessor textProcessor = (TextProcessor)theEObject;
-				T result = caseTextProcessor(textProcessor);
+			case ScribedslPackagePackage.TEXT_PROCESSING: {
+				TextProcessing textProcessing = (TextProcessing)theEObject;
+				T result = caseTextProcessing(textProcessing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -110,43 +110,37 @@ public class ScribedslPackageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScribedslPackagePackage.FILE: {
-				File file = (File)theEObject;
-				T result = caseFile(file);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Scribe DSL Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Processed Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Scribe DSL Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Processed Data</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseScribeDSLModel(ScribeDSLModel object) {
+	public T caseProcessedData(ProcessedData object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text Processor</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Text Processing</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text Processor</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Text Processing</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTextProcessor(TextProcessor object) {
+	public T caseTextProcessing(TextProcessing object) {
 		return null;
 	}
 
@@ -222,21 +216,6 @@ public class ScribedslPackageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStopWord(StopWord object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>File</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>File</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFile(File object) {
 		return null;
 	}
 

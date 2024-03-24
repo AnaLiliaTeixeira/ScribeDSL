@@ -2,12 +2,12 @@
  */
 package ScribedslPackage.impl;
 
-import ScribedslPackage.File;
+import ScribedslPackage.ProcessedData;
 import ScribedslPackage.ScribedslPackagePackage;
 import ScribedslPackage.Stem;
 import ScribedslPackage.StopWord;
 import ScribedslPackage.Text;
-import ScribedslPackage.TextProcessor;
+import ScribedslPackage.TextProcessing;
 import ScribedslPackage.Token;
 
 import java.util.Collection;
@@ -30,23 +30,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text Processor</b></em>'.
+ * An implementation of the model object '<em><b>Text Processing</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getText <em>Text</em>}</li>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getToken <em>Token</em>}</li>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getStem <em>Stem</em>}</li>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getStopword <em>Stopword</em>}</li>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getWordfrequency <em>Wordfrequency</em>}</li>
- *   <li>{@link ScribedslPackage.impl.TextProcessorImpl#getFile <em>File</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getText <em>Text</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getToken <em>Token</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getStem <em>Stem</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getStopword <em>Stopword</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getWordfrequency <em>Wordfrequency</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.TextProcessingImpl#getProcesseddata <em>Processeddata</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextProcessorImpl extends MinimalEObjectImpl.Container implements TextProcessor {
+public class TextProcessingImpl extends MinimalEObjectImpl.Container implements TextProcessing {
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -98,21 +98,21 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	protected Map.Entry<String, Integer> wordfrequency;
 
 	/**
-	 * The cached value of the '{@link #getFile() <em>File</em>}' containment reference.
+	 * The cached value of the '{@link #getProcesseddata() <em>Processeddata</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFile()
+	 * @see #getProcesseddata()
 	 * @generated
 	 * @ordered
 	 */
-	protected File file;
+	protected EList<ProcessedData> processeddata;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TextProcessorImpl() {
+	protected TextProcessingImpl() {
 		super();
 	}
 
@@ -123,7 +123,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScribedslPackagePackage.Literals.TEXT_PROCESSOR;
+		return ScribedslPackagePackage.Literals.TEXT_PROCESSING;
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 		Text oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSOR__TEXT, oldText, newText);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSING__TEXT, oldText, newText);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -161,14 +161,14 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSOR__TEXT, null, msgs);
+				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSING__TEXT, null, msgs);
 			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSOR__TEXT, null, msgs);
+				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSING__TEXT, null, msgs);
 			msgs = basicSetText(newText, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSOR__TEXT, newText, newText));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSING__TEXT, newText, newText));
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public EList<Token> getToken() {
 		if (token == null) {
-			token = new EObjectContainmentEList<Token>(Token.class, this, ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN);
+			token = new EObjectContainmentEList<Token>(Token.class, this, ScribedslPackagePackage.TEXT_PROCESSING__TOKEN);
 		}
 		return token;
 	}
@@ -192,7 +192,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public EList<Stem> getStem() {
 		if (stem == null) {
-			stem = new EObjectContainmentEList<Stem>(Stem.class, this, ScribedslPackagePackage.TEXT_PROCESSOR__STEM);
+			stem = new EObjectContainmentEList<Stem>(Stem.class, this, ScribedslPackagePackage.TEXT_PROCESSING__STEM);
 		}
 		return stem;
 	}
@@ -205,7 +205,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public EList<StopWord> getStopword() {
 		if (stopword == null) {
-			stopword = new EObjectContainmentEList<StopWord>(StopWord.class, this, ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD);
+			stopword = new EObjectContainmentEList<StopWord>(StopWord.class, this, ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD);
 		}
 		return stopword;
 	}
@@ -223,7 +223,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 			wordfrequency = (Map.Entry<String, Integer>)eResolveProxy(oldWordfrequency);
 			if (wordfrequency != oldWordfrequency) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY, oldWordfrequency, wordfrequency));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY, oldWordfrequency, wordfrequency));
 			}
 		}
 		return wordfrequency;
@@ -248,7 +248,7 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 		Map.Entry<String, Integer> oldWordfrequency = wordfrequency;
 		wordfrequency = newWordfrequency;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY, oldWordfrequency, wordfrequency));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY, oldWordfrequency, wordfrequency));
 	}
 
 	/**
@@ -257,43 +257,11 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated
 	 */
 	@Override
-	public File getFile() {
-		return file;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetFile(File newFile, NotificationChain msgs) {
-		File oldFile = file;
-		file = newFile;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSOR__FILE, oldFile, newFile);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<ProcessedData> getProcesseddata() {
+		if (processeddata == null) {
+			processeddata = new EObjectContainmentEList<ProcessedData>(ProcessedData.class, this, ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFile(File newFile) {
-		if (newFile != file) {
-			NotificationChain msgs = null;
-			if (file != null)
-				msgs = ((InternalEObject)file).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSOR__FILE, null, msgs);
-			if (newFile != null)
-				msgs = ((InternalEObject)newFile).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScribedslPackagePackage.TEXT_PROCESSOR__FILE, null, msgs);
-			msgs = basicSetFile(newFile, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.TEXT_PROCESSOR__FILE, newFile, newFile));
+		return processeddata;
 	}
 
 	/**
@@ -304,16 +272,16 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TEXT:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TEXT:
 				return basicSetText(null, msgs);
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TOKEN:
 				return ((InternalEList<?>)getToken()).basicRemove(otherEnd, msgs);
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STEM:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STEM:
 				return ((InternalEList<?>)getStem()).basicRemove(otherEnd, msgs);
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD:
 				return ((InternalEList<?>)getStopword()).basicRemove(otherEnd, msgs);
-			case ScribedslPackagePackage.TEXT_PROCESSOR__FILE:
-				return basicSetFile(null, msgs);
+			case ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA:
+				return ((InternalEList<?>)getProcesseddata()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -326,19 +294,19 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TEXT:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TEXT:
 				return getText();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TOKEN:
 				return getToken();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STEM:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STEM:
 				return getStem();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD:
 				return getStopword();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY:
+			case ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY:
 				if (resolve) return getWordfrequency();
 				return basicGetWordfrequency();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__FILE:
-				return getFile();
+			case ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA:
+				return getProcesseddata();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,26 +320,27 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TEXT:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TEXT:
 				setText((Text)newValue);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TOKEN:
 				getToken().clear();
 				getToken().addAll((Collection<? extends Token>)newValue);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STEM:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STEM:
 				getStem().clear();
 				getStem().addAll((Collection<? extends Stem>)newValue);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD:
 				getStopword().clear();
 				getStopword().addAll((Collection<? extends StopWord>)newValue);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY:
+			case ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY:
 				setWordfrequency((Map.Entry<String, Integer>)newValue);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__FILE:
-				setFile((File)newValue);
+			case ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA:
+				getProcesseddata().clear();
+				getProcesseddata().addAll((Collection<? extends ProcessedData>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,23 +354,23 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TEXT:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TEXT:
 				setText((Text)null);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TOKEN:
 				getToken().clear();
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STEM:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STEM:
 				getStem().clear();
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD:
 				getStopword().clear();
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY:
+			case ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY:
 				setWordfrequency((Map.Entry<String, Integer>)null);
 				return;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__FILE:
-				setFile((File)null);
+			case ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA:
+				getProcesseddata().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -415,26 +384,20 @@ public class TextProcessorImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TEXT:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TEXT:
 				return text != null;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__TOKEN:
+			case ScribedslPackagePackage.TEXT_PROCESSING__TOKEN:
 				return token != null && !token.isEmpty();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STEM:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STEM:
 				return stem != null && !stem.isEmpty();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__STOPWORD:
+			case ScribedslPackagePackage.TEXT_PROCESSING__STOPWORD:
 				return stopword != null && !stopword.isEmpty();
-			case ScribedslPackagePackage.TEXT_PROCESSOR__WORDFREQUENCY:
+			case ScribedslPackagePackage.TEXT_PROCESSING__WORDFREQUENCY:
 				return wordfrequency != null;
-			case ScribedslPackagePackage.TEXT_PROCESSOR__FILE:
-				return file != null;
+			case ScribedslPackagePackage.TEXT_PROCESSING__PROCESSEDDATA:
+				return processeddata != null && !processeddata.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-//	@Override
-//	public void getWordfrequency() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-
-} //TextProcessorImpl
+} //TextProcessingImpl

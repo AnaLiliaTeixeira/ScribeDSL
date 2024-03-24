@@ -20,31 +20,31 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ScribedslPackage.impl.StopWordImpl#getName <em>Name</em>}</li>
+ *   <li>{@link ScribedslPackage.impl.StopWordImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWord {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getValue() {
+		return value;
 	}
 
 	/**
@@ -81,11 +81,11 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.STOP_WORD__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackagePackage.STOP_WORD__VALUE, oldValue, value));
 	}
 
 	/**
@@ -96,8 +96,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScribedslPackagePackage.STOP_WORD__NAME:
-				return getName();
+			case ScribedslPackagePackage.STOP_WORD__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +110,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScribedslPackagePackage.STOP_WORD__NAME:
-				setName((String)newValue);
+			case ScribedslPackagePackage.STOP_WORD__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +125,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScribedslPackagePackage.STOP_WORD__NAME:
-				setName(NAME_EDEFAULT);
+			case ScribedslPackagePackage.STOP_WORD__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +140,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScribedslPackagePackage.STOP_WORD__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ScribedslPackagePackage.STOP_WORD__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,8 +156,8 @@ public class StopWordImpl extends MinimalEObjectImpl.Container implements StopWo
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

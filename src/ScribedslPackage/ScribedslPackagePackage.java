@@ -57,51 +57,42 @@ public interface ScribedslPackagePackage extends EPackage {
 	ScribedslPackagePackage eINSTANCE = ScribedslPackage.impl.ScribedslPackagePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link ScribedslPackage.impl.ScribeDSLModelImpl <em>Scribe DSL Model</em>}' class.
+	 * The meta object id for the '{@link ScribedslPackage.impl.ProcessedDataImpl <em>Processed Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ScribedslPackage.impl.ScribeDSLModelImpl
-	 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getScribeDSLModel()
+	 * @see ScribedslPackage.impl.ProcessedDataImpl
+	 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getProcessedData()
 	 * @generated
 	 */
-	int SCRIBE_DSL_MODEL = 0;
+	int PROCESSED_DATA = 0;
 
 	/**
-	 * The feature id for the '<em><b>Textprocessor</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Processed Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIBE_DSL_MODEL__TEXTPROCESSOR = 0;
+	int PROCESSED_DATA_FEATURE_COUNT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Scribe DSL Model</em>' class.
+	 * The number of operations of the '<em>Processed Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIBE_DSL_MODEL_FEATURE_COUNT = 1;
+	int PROCESSED_DATA_OPERATION_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Scribe DSL Model</em>' class.
+	 * The meta object id for the '{@link ScribedslPackage.impl.TextProcessingImpl <em>Text Processing</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIBE_DSL_MODEL_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link ScribedslPackage.impl.TextProcessorImpl <em>Text Processor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ScribedslPackage.impl.TextProcessorImpl
-	 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getTextProcessor()
+	 * @see ScribedslPackage.impl.TextProcessingImpl
+	 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getTextProcessing()
 	 * @generated
 	 */
-	int TEXT_PROCESSOR = 1;
+	int TEXT_PROCESSING = 1;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -110,7 +101,7 @@ public interface ScribedslPackagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__TEXT = 0;
+	int TEXT_PROCESSING__TEXT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Token</b></em>' containment reference list.
@@ -119,7 +110,7 @@ public interface ScribedslPackagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__TOKEN = 1;
+	int TEXT_PROCESSING__TOKEN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Stem</b></em>' containment reference list.
@@ -128,7 +119,7 @@ public interface ScribedslPackagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__STEM = 2;
+	int TEXT_PROCESSING__STEM = 2;
 
 	/**
 	 * The feature id for the '<em><b>Stopword</b></em>' containment reference list.
@@ -137,7 +128,7 @@ public interface ScribedslPackagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__STOPWORD = 3;
+	int TEXT_PROCESSING__STOPWORD = 3;
 
 	/**
 	 * The feature id for the '<em><b>Wordfrequency</b></em>' reference.
@@ -146,34 +137,34 @@ public interface ScribedslPackagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__WORDFREQUENCY = 4;
+	int TEXT_PROCESSING__WORDFREQUENCY = 4;
 
 	/**
-	 * The feature id for the '<em><b>File</b></em>' containment reference.
+	 * The feature id for the '<em><b>Processeddata</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR__FILE = 5;
+	int TEXT_PROCESSING__PROCESSEDDATA = 5;
 
 	/**
-	 * The number of structural features of the '<em>Text Processor</em>' class.
+	 * The number of structural features of the '<em>Text Processing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR_FEATURE_COUNT = 6;
+	int TEXT_PROCESSING_FEATURE_COUNT = 6;
 
 	/**
-	 * The number of operations of the '<em>Text Processor</em>' class.
+	 * The number of operations of the '<em>Text Processing</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROCESSOR_OPERATION_COUNT = 0;
+	int TEXT_PROCESSING_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ScribedslPackage.impl.WordFrequencyImpl <em>Word Frequency</em>}' class.
@@ -269,13 +260,13 @@ public interface ScribedslPackagePackage extends EPackage {
 	int TOKEN = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOKEN__NAME = 0;
+	int TOKEN__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Token</em>' class.
@@ -306,13 +297,13 @@ public interface ScribedslPackagePackage extends EPackage {
 	int STEM = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEM__NAME = 0;
+	int STEM__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Stem</em>' class.
@@ -343,13 +334,13 @@ public interface ScribedslPackagePackage extends EPackage {
 	int STOP_WORD = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STOP_WORD__NAME = 0;
+	int STOP_WORD__VALUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Stop Word</em>' class.
@@ -369,140 +360,92 @@ public interface ScribedslPackagePackage extends EPackage {
 	 */
 	int STOP_WORD_OPERATION_COUNT = 0;
 
+
 	/**
-	 * The meta object id for the '{@link ScribedslPackage.impl.FileImpl <em>File</em>}' class.
+	 * Returns the meta object for class '{@link ScribedslPackage.ProcessedData <em>Processed Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ScribedslPackage.impl.FileImpl
-	 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getFile()
+	 * @return the meta object for class '<em>Processed Data</em>'.
+	 * @see ScribedslPackage.ProcessedData
 	 * @generated
 	 */
-	int FILE = 7;
+	EClass getProcessedData();
 
 	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * Returns the meta object for class '{@link ScribedslPackage.TextProcessing <em>Text Processing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE__TEXT = 0;
-
-	/**
-	 * The number of structural features of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_OPERATION_COUNT = 0;
-
-
-	/**
-	 * Returns the meta object for class '{@link ScribedslPackage.ScribeDSLModel <em>Scribe DSL Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Scribe DSL Model</em>'.
-	 * @see ScribedslPackage.ScribeDSLModel
+	 * @return the meta object for class '<em>Text Processing</em>'.
+	 * @see ScribedslPackage.TextProcessing
 	 * @generated
 	 */
-	EClass getScribeDSLModel();
+	EClass getTextProcessing();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.ScribeDSLModel#getTextprocessor <em>Textprocessor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Textprocessor</em>'.
-	 * @see ScribedslPackage.ScribeDSLModel#getTextprocessor()
-	 * @see #getScribeDSLModel()
-	 * @generated
-	 */
-	EReference getScribeDSLModel_Textprocessor();
-
-	/**
-	 * Returns the meta object for class '{@link ScribedslPackage.TextProcessor <em>Text Processor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text Processor</em>'.
-	 * @see ScribedslPackage.TextProcessor
-	 * @generated
-	 */
-	EClass getTextProcessor();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ScribedslPackage.TextProcessor#getText <em>Text</em>}'.
+	 * Returns the meta object for the containment reference '{@link ScribedslPackage.TextProcessing#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Text</em>'.
-	 * @see ScribedslPackage.TextProcessor#getText()
-	 * @see #getTextProcessor()
+	 * @see ScribedslPackage.TextProcessing#getText()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_Text();
+	EReference getTextProcessing_Text();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessor#getToken <em>Token</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessing#getToken <em>Token</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Token</em>'.
-	 * @see ScribedslPackage.TextProcessor#getToken()
-	 * @see #getTextProcessor()
+	 * @see ScribedslPackage.TextProcessing#getToken()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_Token();
+	EReference getTextProcessing_Token();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessor#getStem <em>Stem</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessing#getStem <em>Stem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Stem</em>'.
-	 * @see ScribedslPackage.TextProcessor#getStem()
-	 * @see #getTextProcessor()
+	 * @see ScribedslPackage.TextProcessing#getStem()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_Stem();
+	EReference getTextProcessing_Stem();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessor#getStopword <em>Stopword</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessing#getStopword <em>Stopword</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Stopword</em>'.
-	 * @see ScribedslPackage.TextProcessor#getStopword()
-	 * @see #getTextProcessor()
+	 * @see ScribedslPackage.TextProcessing#getStopword()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_Stopword();
+	EReference getTextProcessing_Stopword();
 
 	/**
-	 * Returns the meta object for the reference '{@link ScribedslPackage.TextProcessor#getWordfrequency <em>Wordfrequency</em>}'.
+	 * Returns the meta object for the reference '{@link ScribedslPackage.TextProcessing#getWordfrequency <em>Wordfrequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Wordfrequency</em>'.
-	 * @see ScribedslPackage.TextProcessor#getWordfrequency()
-	 * @see #getTextProcessor()
+	 * @see ScribedslPackage.TextProcessing#getWordfrequency()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_Wordfrequency();
+	EReference getTextProcessing_Wordfrequency();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link ScribedslPackage.TextProcessor#getFile <em>File</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ScribedslPackage.TextProcessing#getProcesseddata <em>Processeddata</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>File</em>'.
-	 * @see ScribedslPackage.TextProcessor#getFile()
-	 * @see #getTextProcessor()
+	 * @return the meta object for the containment reference list '<em>Processeddata</em>'.
+	 * @see ScribedslPackage.TextProcessing#getProcesseddata()
+	 * @see #getTextProcessing()
 	 * @generated
 	 */
-	EReference getTextProcessor_File();
+	EReference getTextProcessing_Processeddata();
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Word Frequency</em>}'.
@@ -570,15 +513,15 @@ public interface ScribedslPackagePackage extends EPackage {
 	EClass getToken();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ScribedslPackage.Token#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ScribedslPackage.Token#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ScribedslPackage.Token#getName()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see ScribedslPackage.Token#getValue()
 	 * @see #getToken()
 	 * @generated
 	 */
-	EAttribute getToken_Name();
+	EAttribute getToken_Value();
 
 	/**
 	 * Returns the meta object for class '{@link ScribedslPackage.Stem <em>Stem</em>}'.
@@ -591,15 +534,15 @@ public interface ScribedslPackagePackage extends EPackage {
 	EClass getStem();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ScribedslPackage.Stem#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ScribedslPackage.Stem#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ScribedslPackage.Stem#getName()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see ScribedslPackage.Stem#getValue()
 	 * @see #getStem()
 	 * @generated
 	 */
-	EAttribute getStem_Name();
+	EAttribute getStem_Value();
 
 	/**
 	 * Returns the meta object for class '{@link ScribedslPackage.StopWord <em>Stop Word</em>}'.
@@ -612,36 +555,15 @@ public interface ScribedslPackagePackage extends EPackage {
 	EClass getStopWord();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ScribedslPackage.StopWord#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ScribedslPackage.StopWord#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ScribedslPackage.StopWord#getName()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see ScribedslPackage.StopWord#getValue()
 	 * @see #getStopWord()
 	 * @generated
 	 */
-	EAttribute getStopWord_Name();
-
-	/**
-	 * Returns the meta object for class '{@link ScribedslPackage.File <em>File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>File</em>'.
-	 * @see ScribedslPackage.File
-	 * @generated
-	 */
-	EClass getFile();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link ScribedslPackage.File#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Text</em>'.
-	 * @see ScribedslPackage.File#getText()
-	 * @see #getFile()
-	 * @generated
-	 */
-	EReference getFile_Text();
+	EAttribute getStopWord_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -667,32 +589,24 @@ public interface ScribedslPackagePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link ScribedslPackage.impl.ScribeDSLModelImpl <em>Scribe DSL Model</em>}' class.
+		 * The meta object literal for the '{@link ScribedslPackage.impl.ProcessedDataImpl <em>Processed Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ScribedslPackage.impl.ScribeDSLModelImpl
-		 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getScribeDSLModel()
+		 * @see ScribedslPackage.impl.ProcessedDataImpl
+		 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getProcessedData()
 		 * @generated
 		 */
-		EClass SCRIBE_DSL_MODEL = eINSTANCE.getScribeDSLModel();
+		EClass PROCESSED_DATA = eINSTANCE.getProcessedData();
 
 		/**
-		 * The meta object literal for the '<em><b>Textprocessor</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link ScribedslPackage.impl.TextProcessingImpl <em>Text Processing</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see ScribedslPackage.impl.TextProcessingImpl
+		 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getTextProcessing()
 		 * @generated
 		 */
-		EReference SCRIBE_DSL_MODEL__TEXTPROCESSOR = eINSTANCE.getScribeDSLModel_Textprocessor();
-
-		/**
-		 * The meta object literal for the '{@link ScribedslPackage.impl.TextProcessorImpl <em>Text Processor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ScribedslPackage.impl.TextProcessorImpl
-		 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getTextProcessor()
-		 * @generated
-		 */
-		EClass TEXT_PROCESSOR = eINSTANCE.getTextProcessor();
+		EClass TEXT_PROCESSING = eINSTANCE.getTextProcessing();
 
 		/**
 		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
@@ -700,7 +614,7 @@ public interface ScribedslPackagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__TEXT = eINSTANCE.getTextProcessor_Text();
+		EReference TEXT_PROCESSING__TEXT = eINSTANCE.getTextProcessing_Text();
 
 		/**
 		 * The meta object literal for the '<em><b>Token</b></em>' containment reference list feature.
@@ -708,7 +622,7 @@ public interface ScribedslPackagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__TOKEN = eINSTANCE.getTextProcessor_Token();
+		EReference TEXT_PROCESSING__TOKEN = eINSTANCE.getTextProcessing_Token();
 
 		/**
 		 * The meta object literal for the '<em><b>Stem</b></em>' containment reference list feature.
@@ -716,7 +630,7 @@ public interface ScribedslPackagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__STEM = eINSTANCE.getTextProcessor_Stem();
+		EReference TEXT_PROCESSING__STEM = eINSTANCE.getTextProcessing_Stem();
 
 		/**
 		 * The meta object literal for the '<em><b>Stopword</b></em>' containment reference list feature.
@@ -724,7 +638,7 @@ public interface ScribedslPackagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__STOPWORD = eINSTANCE.getTextProcessor_Stopword();
+		EReference TEXT_PROCESSING__STOPWORD = eINSTANCE.getTextProcessing_Stopword();
 
 		/**
 		 * The meta object literal for the '<em><b>Wordfrequency</b></em>' reference feature.
@@ -732,15 +646,15 @@ public interface ScribedslPackagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__WORDFREQUENCY = eINSTANCE.getTextProcessor_Wordfrequency();
+		EReference TEXT_PROCESSING__WORDFREQUENCY = eINSTANCE.getTextProcessing_Wordfrequency();
 
 		/**
-		 * The meta object literal for the '<em><b>File</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Processeddata</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_PROCESSOR__FILE = eINSTANCE.getTextProcessor_File();
+		EReference TEXT_PROCESSING__PROCESSEDDATA = eINSTANCE.getTextProcessing_Processeddata();
 
 		/**
 		 * The meta object literal for the '{@link ScribedslPackage.impl.WordFrequencyImpl <em>Word Frequency</em>}' class.
@@ -797,12 +711,12 @@ public interface ScribedslPackagePackage extends EPackage {
 		EClass TOKEN = eINSTANCE.getToken();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TOKEN__NAME = eINSTANCE.getToken_Name();
+		EAttribute TOKEN__VALUE = eINSTANCE.getToken_Value();
 
 		/**
 		 * The meta object literal for the '{@link ScribedslPackage.impl.StemImpl <em>Stem</em>}' class.
@@ -815,12 +729,12 @@ public interface ScribedslPackagePackage extends EPackage {
 		EClass STEM = eINSTANCE.getStem();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEM__NAME = eINSTANCE.getStem_Name();
+		EAttribute STEM__VALUE = eINSTANCE.getStem_Value();
 
 		/**
 		 * The meta object literal for the '{@link ScribedslPackage.impl.StopWordImpl <em>Stop Word</em>}' class.
@@ -833,30 +747,12 @@ public interface ScribedslPackagePackage extends EPackage {
 		EClass STOP_WORD = eINSTANCE.getStopWord();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STOP_WORD__NAME = eINSTANCE.getStopWord_Name();
-
-		/**
-		 * The meta object literal for the '{@link ScribedslPackage.impl.FileImpl <em>File</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ScribedslPackage.impl.FileImpl
-		 * @see ScribedslPackage.impl.ScribedslPackagePackageImpl#getFile()
-		 * @generated
-		 */
-		EClass FILE = eINSTANCE.getFile();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FILE__TEXT = eINSTANCE.getFile_Text();
+		EAttribute STOP_WORD__VALUE = eINSTANCE.getStopWord_Value();
 
 	}
 

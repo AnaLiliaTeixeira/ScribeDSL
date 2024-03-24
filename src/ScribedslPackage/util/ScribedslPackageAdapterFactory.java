@@ -70,12 +70,12 @@ public class ScribedslPackageAdapterFactory extends AdapterFactoryImpl {
 	protected ScribedslPackageSwitch<Adapter> modelSwitch =
 		new ScribedslPackageSwitch<Adapter>() {
 			@Override
-			public Adapter caseScribeDSLModel(ScribeDSLModel object) {
-				return createScribeDSLModelAdapter();
+			public Adapter caseProcessedData(ProcessedData object) {
+				return createProcessedDataAdapter();
 			}
 			@Override
-			public Adapter caseTextProcessor(TextProcessor object) {
-				return createTextProcessorAdapter();
+			public Adapter caseTextProcessing(TextProcessing object) {
+				return createTextProcessingAdapter();
 			}
 			@Override
 			public Adapter caseWordFrequency(Map.Entry<String, Integer> object) {
@@ -98,10 +98,6 @@ public class ScribedslPackageAdapterFactory extends AdapterFactoryImpl {
 				return createStopWordAdapter();
 			}
 			@Override
-			public Adapter caseFile(File object) {
-				return createFileAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -122,30 +118,30 @@ public class ScribedslPackageAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ScribedslPackage.ScribeDSLModel <em>Scribe DSL Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link ScribedslPackage.ProcessedData <em>Processed Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ScribedslPackage.ScribeDSLModel
+	 * @see ScribedslPackage.ProcessedData
 	 * @generated
 	 */
-	public Adapter createScribeDSLModelAdapter() {
+	public Adapter createProcessedDataAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ScribedslPackage.TextProcessor <em>Text Processor</em>}'.
+	 * Creates a new adapter for an object of class '{@link ScribedslPackage.TextProcessing <em>Text Processing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ScribedslPackage.TextProcessor
+	 * @see ScribedslPackage.TextProcessing
 	 * @generated
 	 */
-	public Adapter createTextProcessorAdapter() {
+	public Adapter createTextProcessingAdapter() {
 		return null;
 	}
 
@@ -216,20 +212,6 @@ public class ScribedslPackageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStopWordAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ScribedslPackage.File <em>File</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ScribedslPackage.File
-	 * @generated
-	 */
-	public Adapter createFileAdapter() {
 		return null;
 	}
 
