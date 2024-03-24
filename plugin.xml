@@ -10,7 +10,7 @@
       <!-- @generated Scribedsl -->
       <package
             uri="Scribedsl"
-            class="ScribedslPackage.ScribedslPackagePackage"
+            class="scribedsl.ScribedslPackage"
             genModel="model/Scribedsl.genmodel"/>
    </extension>
 

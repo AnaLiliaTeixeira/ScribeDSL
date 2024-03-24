@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ScribedslPackage" nsURI="Scribedsl" nsPrefix="Scribedsl">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scribedsl" nsURI="Scribedsl" nsPrefix="Scribedsl">
   <eClassifiers xsi:type="ecore:EClass" name="ProcessedData">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="textprocessing" lowerBound="1"
-        upperBound="-1" eType="#//TextProcessing" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processor" lowerBound="1"
+        upperBound="-1" eType="#//Processor" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextProcessing">
+  <eClassifiers xsi:type="ecore:EClass" name="Processor">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="token" upperBound="-1"
         eType="#//Token" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stem" upperBound="-1" eType="#//Stem"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stopword" upperBound="-1"
         eType="#//StopWord" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="wordfrequency" eType="#//WordFrequency"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wordfrequency" upperBound="-1"
+        eType="#//WordFrequency"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WordFrequency" instanceClassName="java.util.Map$Entry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -23,9 +22,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Token">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Stem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StopWord">

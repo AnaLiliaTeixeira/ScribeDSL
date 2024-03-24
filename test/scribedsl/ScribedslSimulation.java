@@ -1,13 +1,12 @@
 package scribedsl;
 
-import ScribedslPackage.ProcessedData;
-import ScribedslPackage.dsl.ScribedslBuilder;
+import scribedsl.dsl.TextProcessing;
 
 public class ScribedslSimulation {
 	
 	public static void main (String[] args) {
 		
-		ScribedslBuilder processor = new ScribedslBuilder();
+		TextProcessing processor = new TextProcessing();
 		ProcessedData tokenizedText = processor.withData("Text").tokenize("\\s+").build();
 		
 		ProcessedData analyseText = processor.withData("Text")
