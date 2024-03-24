@@ -3,6 +3,10 @@ package ScribedslPackage.dsl;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.tartarus.snowball.ext.PorterStemmer;
 
 import ScribedslPackage.ProcessedData;
 import ScribedslPackage.ScribedslPackageFactory;
@@ -16,13 +20,13 @@ public class ScribedslBuilder {
 	private static ScribedslPackageFactory factory = ScribedslPackageFactory.eINSTANCE;
 
     
-    public Initial builder() {
-        return new ProcessedDataImpl(factory.createTextProcessing());
+    public ReadText withData(String text) {
+        return new ProcessedDataImpl(factory.createTextProcessing(), text, false);
     }
     
-    public interface Initial {	
-    	public ReadText withData(String text);
-    	public ReadText fromFile(String path);
+    public ReadText fromFile(String path) {
+        return new ProcessedDataImpl(factory.createTextProcessing(), path, true);
+
     }
     
     public interface ReadText {
@@ -51,14 +55,20 @@ public class ScribedslBuilder {
     	public ProcessedData build();
     }
     
-    public static class ProcessedDataImpl implements Initial, ReadText, Tokenizer, FilterStopWords, PerformStemming, AnalyseWordFrequency {
+    public static class ProcessedDataImpl implements ReadText, Tokenizer, FilterStopWords, PerformStemming, AnalyseWordFrequency {
 
     	private TextProcessing processor;
+    	private ProcessedData processedData;
     	private Text text;
     	
-        public ProcessedDataImpl(TextProcessing textProcessing) {
+        public ProcessedDataImpl(TextProcessing textProcessing, String textOrPath, boolean isPath) {
         	this.processor = textProcessing;
 	        this.text = factory.createText();
+	        
+	        if (isPath)
+	        	fromFile(textOrPath);
+	        else
+	        	withData(textOrPath);
 	        
 	        try (BufferedReader br = new BufferedReader(new FileReader("StopWords.txt"))) {
 	            String line;
@@ -72,14 +82,11 @@ public class ScribedslBuilder {
 	        }
         }
         
-		@Override
-		public ReadText withData(String text) {
+		public void withData(String text) {
 	        this.text.setValue(text);
-			return this;
 		}
 
-		@Override
-		public ReadText fromFile(String path) {
+		public void fromFile(String path) {
 	        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 	        	StringBuilder sb = new StringBuilder();
 	            String line;
@@ -90,7 +97,6 @@ public class ScribedslBuilder {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-			return this;
 		}
 
 		@Override
@@ -106,32 +112,45 @@ public class ScribedslBuilder {
 
 		@Override
 		public FilterStopWords filterStopWords() {
-			for (Token t : processor.getToken()) {
-//				if (processor.getStopword(((s) -> s.getName().equals(t.getName())))) {
-//					processor.getToken().remove(t);
-//				}
+			List<Token> tokenList = processor.getToken();
+			List<Token> filteredTokenList = new ArrayList<>();
+
+			for (Token t : tokenList) {
+				for (StopWord sw : processor.getStopword()) {
+					if (sw.getValue().equals(t.getValue()))
+						filteredTokenList.add(t);
+				}
 			}
+			tokenList.clear();
+			tokenList.addAll(filteredTokenList);
 			return this;
 		}
 
 		@Override
 		public PerformStemming performStemming() {
-			// TODO Auto-generated method stub
+			PorterStemmer stemmer = new PorterStemmer();
+			List<Token> stemmedTokens = new ArrayList<>();
+			for (Token t : processor.getToken()) {
+				stemmer.setCurrent(t.getValue());
+				stemmer.stem();
+				stemmer.getCurrent();
+				stemmedTokens.add(t);
+			}
+			processor.getToken().clear();
+			processor.getToken().addAll(stemmedTokens);
 			return this;
 		}
 
 		@Override
 		public AnalyseWordFrequency analyseWordFrequency() {
 			for (Token t : processor.getToken()) {
-//				processor.set;
 			}
 			return this;
 		}
         
 		@Override
 		public ProcessedData build() {
-			// TODO Auto-generated method stub
-			return null;
+			return processedData;
 		}
     }
 }

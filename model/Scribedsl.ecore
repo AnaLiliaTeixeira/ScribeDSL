@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ScribedslPackage" nsURI="Scribedsl" nsPrefix="Scribedsl">
-  <eClassifiers xsi:type="ecore:EClass" name="ProcessedData"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessedData">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textprocessing" lowerBound="1"
+        upperBound="-1" eType="#//TextProcessing" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextProcessing">
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="token" upperBound="-1"
@@ -11,12 +14,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stopword" upperBound="-1"
         eType="#//StopWord" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="wordfrequency" eType="#//WordFrequency"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="processeddata" lowerBound="1"
-        upperBound="-1" eType="#//ProcessedData" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WordFrequency" instanceClassName="java.util.Map$Entry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
