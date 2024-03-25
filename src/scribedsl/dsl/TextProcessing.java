@@ -64,6 +64,8 @@ public class TextProcessing {
 		public ProcessedDataImpl(Processor processor, String textOrPath, boolean isPath) {
 			this.processor = processor;
 			this.text = factory.createText();
+			this.processedData = factory.createProcessedData();
+			processedData.getProcessor();
 
 			if (isPath)
 				fromFile(textOrPath);
@@ -144,6 +146,7 @@ public class TextProcessing {
 		@Override
 		public AnalyseWordFrequency analyseWordFrequency() {
 			for (Token t : processor.getToken()) {
+
 			}
 			return this;
 		}
@@ -151,6 +154,14 @@ public class TextProcessing {
 		@Override
 		public ProcessedData build() {
 			return processedData;
+		}
+		
+		public Processor getProcessor() {
+			return processor;
+		}
+
+		public void setProcessor(Processor processor) {
+			this.processor = processor;
 		}
 	}
 }

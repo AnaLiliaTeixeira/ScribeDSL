@@ -7,7 +7,6 @@ public class ScribedslSimulation {
 	public static void main (String[] args) {
 		
 		TextProcessing processor = new TextProcessing();
-		ProcessedData tokenizedText = processor.withData("Text").tokenize("\\s+").build();
 		
 		ProcessedData analyseText = processor.withData("Text")
 											 .tokenize("\\s+")

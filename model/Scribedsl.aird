@@ -4,7 +4,7 @@
     <semanticResources>Scribedsl.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_viw3cObXEe6WMNqaBcLnNg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zA05wObXEe6WMNqaBcLnNg" name=" class diagram" repPath="#_y_00MObXEe6WMNqaBcLnNg" changeId="1711316321159">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zA05wObXEe6WMNqaBcLnNg" name=" class diagram" repPath="#_y_00MObXEe6WMNqaBcLnNg" changeId="1711386647816">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="Scribedsl.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -345,7 +345,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_e5kLXOoeEe6-UpPOZ6e2GA" name="[1..*] processor" sourceNode="_3G3j8OhJEe6HMqJA9s2DTA" targetNode="_DNqWoOhKEe6HMqJA9s2DTA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_e5kLXOoeEe6-UpPOZ6e2GA" name="[1..1] processor" sourceNode="_3G3j8OhJEe6HMqJA9s2DTA" targetNode="_DNqWoOhKEe6HMqJA9s2DTA">
       <target xmi:type="ecore:EReference" href="Scribedsl.ecore#//ProcessedData/processor"/>
       <semanticElements xmi:type="ecore:EReference" href="Scribedsl.ecore#//ProcessedData/processor"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_fgrOoOoeEe6-UpPOZ6e2GA" description="_fgqnkOoeEe6-UpPOZ6e2GA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
