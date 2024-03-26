@@ -2,19 +2,14 @@
  */
 package scribedsl.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import scribedsl.ProcessedData;
 import scribedsl.Processor;
@@ -35,14 +30,14 @@ import scribedsl.ScribedslPackage;
  */
 public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements ProcessedData {
 	/**
-	 * The cached value of the '{@link #getProcessor() <em>Processor</em>}' containment reference list.
+	 * The cached value of the '{@link #getProcessor() <em>Processor</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProcessor()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Processor> processor;
+	protected Processor processor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,11 +64,43 @@ public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements P
 	 * @generated
 	 */
 	@Override
-	public EList<Processor> getProcessor() {
-		if (processor == null) {
-			processor = new EObjectContainmentEList<Processor>(Processor.class, this, ScribedslPackage.PROCESSED_DATA__PROCESSOR);
-		}
+	public Processor getProcessor() {
 		return processor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProcessor(Processor newProcessor, NotificationChain msgs) {
+		Processor oldProcessor = processor;
+		processor = newProcessor;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScribedslPackage.PROCESSED_DATA__PROCESSOR, oldProcessor, newProcessor);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProcessor(Processor newProcessor) {
+		if (newProcessor != processor) {
+			NotificationChain msgs = null;
+			if (processor != null)
+				msgs = ((InternalEObject)processor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScribedslPackage.PROCESSED_DATA__PROCESSOR, null, msgs);
+			if (newProcessor != null)
+				msgs = ((InternalEObject)newProcessor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScribedslPackage.PROCESSED_DATA__PROCESSOR, null, msgs);
+			msgs = basicSetProcessor(newProcessor, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ScribedslPackage.PROCESSED_DATA__PROCESSOR, newProcessor, newProcessor));
 	}
 
 	/**
@@ -85,7 +112,7 @@ public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements P
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ScribedslPackage.PROCESSED_DATA__PROCESSOR:
-				return ((InternalEList<?>)getProcessor()).basicRemove(otherEnd, msgs);
+				return basicSetProcessor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -109,13 +136,11 @@ public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ScribedslPackage.PROCESSED_DATA__PROCESSOR:
-				getProcessor().clear();
-				getProcessor().addAll((Collection<? extends Processor>)newValue);
+				setProcessor((Processor)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,7 +155,7 @@ public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements P
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ScribedslPackage.PROCESSED_DATA__PROCESSOR:
-				getProcessor().clear();
+				setProcessor((Processor)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -145,7 +170,7 @@ public class ProcessedDataImpl extends MinimalEObjectImpl.Container implements P
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ScribedslPackage.PROCESSED_DATA__PROCESSOR:
-				return processor != null && !processor.isEmpty();
+				return processor != null;
 		}
 		return super.eIsSet(featureID);
 	}

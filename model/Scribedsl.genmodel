@@ -13,7 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scribedsl.ecore#//Processor/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scribedsl.ecore#//Processor/token"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scribedsl.ecore#//Processor/stopword"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scribedsl.ecore#//Processor/wordfrequency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scribedsl.ecore#//Processor/wordfrequency"/>
     </genClasses>
     <genClasses ecoreClass="Scribedsl.ecore#//WordFrequency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scribedsl.ecore#//WordFrequency/key"/>

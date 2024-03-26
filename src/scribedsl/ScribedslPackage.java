@@ -67,7 +67,7 @@ public interface ScribedslPackage extends EPackage {
 	int PROCESSED_DATA = 0;
 
 	/**
-	 * The feature id for the '<em><b>Processor</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Processor</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -131,7 +131,7 @@ public interface ScribedslPackage extends EPackage {
 	int PROCESSOR__STOPWORD = 2;
 
 	/**
-	 * The feature id for the '<em><b>Wordfrequency</b></em>' reference list.
+	 * The feature id for the '<em><b>Wordfrequency</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -326,10 +326,10 @@ public interface ScribedslPackage extends EPackage {
 	EClass getProcessedData();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link scribedsl.ProcessedData#getProcessor <em>Processor</em>}'.
+	 * Returns the meta object for the containment reference '{@link scribedsl.ProcessedData#getProcessor <em>Processor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Processor</em>'.
+	 * @return the meta object for the containment reference '<em>Processor</em>'.
 	 * @see scribedsl.ProcessedData#getProcessor()
 	 * @see #getProcessedData()
 	 * @generated
@@ -380,10 +380,10 @@ public interface ScribedslPackage extends EPackage {
 	EReference getProcessor_Stopword();
 
 	/**
-	 * Returns the meta object for the reference list '{@link scribedsl.Processor#getWordfrequency <em>Wordfrequency</em>}'.
+	 * Returns the meta object for the map '{@link scribedsl.Processor#getWordfrequency <em>Wordfrequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Wordfrequency</em>'.
+	 * @return the meta object for the map '<em>Wordfrequency</em>'.
 	 * @see scribedsl.Processor#getWordfrequency()
 	 * @see #getProcessor()
 	 * @generated
@@ -521,7 +521,7 @@ public interface ScribedslPackage extends EPackage {
 		EClass PROCESSED_DATA = eINSTANCE.getProcessedData();
 
 		/**
-		 * The meta object literal for the '<em><b>Processor</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Processor</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -563,7 +563,7 @@ public interface ScribedslPackage extends EPackage {
 		EReference PROCESSOR__STOPWORD = eINSTANCE.getProcessor_Stopword();
 
 		/**
-		 * The meta object literal for the '<em><b>Wordfrequency</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Wordfrequency</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

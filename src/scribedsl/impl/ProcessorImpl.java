@@ -3,23 +3,22 @@
 package scribedsl.impl;
 
 import java.util.Collection;
-import java.util.Map;
-
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import scribedsl.Processor;
@@ -76,14 +75,14 @@ public class ProcessorImpl extends MinimalEObjectImpl.Container implements Proce
 	protected EList<StopWord> stopword;
 
 	/**
-	 * The cached value of the '{@link #getWordfrequency() <em>Wordfrequency</em>}' reference list.
+	 * The cached value of the '{@link #getWordfrequency() <em>Wordfrequency</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWordfrequency()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Map.Entry<String, Integer>> wordfrequency;
+	protected EMap<String, Integer> wordfrequency;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,9 +180,9 @@ public class ProcessorImpl extends MinimalEObjectImpl.Container implements Proce
 	 * @generated
 	 */
 	@Override
-	public EList<Map.Entry<String, Integer>> getWordfrequency() {
+	public EMap<String, Integer> getWordfrequency() {
 		if (wordfrequency == null) {
-			wordfrequency = new EObjectResolvingEList<Map.Entry<String, Integer>>(Entry.class, this, ScribedslPackage.PROCESSOR__WORDFREQUENCY);
+			wordfrequency = new EcoreEMap<String,Integer>(ScribedslPackage.Literals.WORD_FREQUENCY, WordFrequencyImpl.class, this, ScribedslPackage.PROCESSOR__WORDFREQUENCY);
 		}
 		return wordfrequency;
 	}
@@ -202,6 +201,8 @@ public class ProcessorImpl extends MinimalEObjectImpl.Container implements Proce
 				return ((InternalEList<?>)getToken()).basicRemove(otherEnd, msgs);
 			case ScribedslPackage.PROCESSOR__STOPWORD:
 				return ((InternalEList<?>)getStopword()).basicRemove(otherEnd, msgs);
+			case ScribedslPackage.PROCESSOR__WORDFREQUENCY:
+				return ((InternalEList<?>)getWordfrequency()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -221,7 +222,8 @@ public class ProcessorImpl extends MinimalEObjectImpl.Container implements Proce
 			case ScribedslPackage.PROCESSOR__STOPWORD:
 				return getStopword();
 			case ScribedslPackage.PROCESSOR__WORDFREQUENCY:
-				return getWordfrequency();
+				if (coreType) return getWordfrequency();
+				else return getWordfrequency().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -247,8 +249,7 @@ public class ProcessorImpl extends MinimalEObjectImpl.Container implements Proce
 				getStopword().addAll((Collection<? extends StopWord>)newValue);
 				return;
 			case ScribedslPackage.PROCESSOR__WORDFREQUENCY:
-				getWordfrequency().clear();
-				getWordfrequency().addAll((Collection<? extends Map.Entry<String, Integer>>)newValue);
+				((EStructuralFeature.Setting)getWordfrequency()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

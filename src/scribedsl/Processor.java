@@ -2,9 +2,8 @@
  */
 package scribedsl;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -75,15 +74,16 @@ public interface Processor extends EObject {
 	EList<StopWord> getStopword();
 
 	/**
-	 * Returns the value of the '<em><b>Wordfrequency</b></em>' reference list.
-	 * The list contents are of type {@link java.util.Map.Entry}<code>&lt;java.lang.String, java.lang.Integer&gt;</code>.
+	 * Returns the value of the '<em><b>Wordfrequency</b></em>' map.
+	 * The key is of type {@link java.lang.String},
+	 * and the value is of type {@link java.lang.Integer},
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Wordfrequency</em>' reference list.
+	 * @return the value of the '<em>Wordfrequency</em>' map.
 	 * @see scribedsl.ScribedslPackage#getProcessor_Wordfrequency()
 	 * @model mapType="scribedsl.WordFrequency&lt;org.eclipse.emf.ecore.EString, org.eclipse.emf.ecore.EIntegerObject&gt;"
 	 * @generated
 	 */
-	EList<Map.Entry<String, Integer>> getWordfrequency();
+	EMap<String, Integer> getWordfrequency();
 
 } // Processor

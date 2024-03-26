@@ -3,9 +3,11 @@ package scribedsl.dsl;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EMap;
 import org.tartarus.snowball.ext.PorterStemmer;
 
 import scribedsl.ProcessedData;
@@ -20,11 +22,11 @@ public class TextProcessing {
 	private static ScribedslFactory factory = ScribedslFactory.eINSTANCE;
 
 	public ReadText withData(String text) {
-		return new ProcessedDataImpl(factory.createProcessor(), text, false);
+		return new ProcessedDataImpl(text, false);
 	}
 
 	public ReadText fromFile(String path) {
-		return new ProcessedDataImpl(factory.createProcessor(), path, true);
+		return new ProcessedDataImpl(path, true);
 
 	}
 
@@ -59,20 +61,18 @@ public class TextProcessing {
 
 		private Processor processor;
 		private ProcessedData processedData;
-		private Text text;
 
-		public ProcessedDataImpl(Processor processor, String textOrPath, boolean isPath) {
-			this.processor = processor;
-			this.text = factory.createText();
-			this.processedData = factory.createProcessedData();
-			processedData.getProcessor();
+		public ProcessedDataImpl(String textOrPath, boolean isPath) {
+			this.processor = factory.createProcessor();
+			this.processedData = factory.createProcessedData();	
+			this.processedData.setProcessor(processor);
 
 			if (isPath)
 				fromFile(textOrPath);
 			else
 				withData(textOrPath);
 
-			try (BufferedReader br = new BufferedReader(new FileReader("stopWords.txt"))) {
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("stopWords.txt")))) {
 				String line;
 				while ((line = br.readLine()) != null) {
 					StopWord sw = factory.createStopWord();
@@ -83,9 +83,15 @@ public class TextProcessing {
 				e.printStackTrace();
 			}
 		}
+		
+		public void sayHello() {
+			System.out.println("Hello!!");
+		}
 
-		public void withData(String text) {
-			this.text.setValue(text);
+		public void withData(String textName) {
+			Text text = factory.createText();
+			text.setValue(textName);
+			processor.setText(text);
 		}
 
 		public void fromFile(String path) {
@@ -95,7 +101,7 @@ public class TextProcessing {
 				while ((line = br.readLine()) != null) {
 					sb.append(line);
 				}
-				this.text.setValue(sb.toString());
+				withData(sb.toString());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -103,7 +109,7 @@ public class TextProcessing {
 
 		@Override
 		public Tokenizer tokenize(String regex) {
-			String[] splitted = this.text.getValue().split(regex);
+			String[] splitted = processor.getText().getValue().split(regex);
 			for (String s : splitted) {
 				Token tokenToAdd = factory.createToken();
 				tokenToAdd.setValue(s);
@@ -145,8 +151,14 @@ public class TextProcessing {
 
 		@Override
 		public AnalyseWordFrequency analyseWordFrequency() {
+			EMap<String, Integer> wordFrequencyMap = processor.getWordfrequency();
 			for (Token t : processor.getToken()) {
-
+	            String word = t.getValue();
+	            if (wordFrequencyMap.containsKey(word)) {
+	                wordFrequencyMap.put(word, wordFrequencyMap.get(word) + 1);
+	            } else {
+	                wordFrequencyMap.put(word, 1);
+	            }
 			}
 			return this;
 		}
