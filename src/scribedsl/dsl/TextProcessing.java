@@ -95,7 +95,7 @@ public class TextProcessing {
 		}
 
 		public void fromFile(String path) {
-			try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(path)))) {
 				StringBuilder sb = new StringBuilder();
 				String line;
 				while ((line = br.readLine()) != null) {
@@ -124,10 +124,13 @@ public class TextProcessing {
 			List<Token> filteredTokenList = new ArrayList<>();
 
 			for (Token t : tokenList) {
+				boolean isStopWord = false;
 				for (StopWord sw : processor.getStopword()) {
-					if (sw.getValue().equals(t.getValue()))
-						filteredTokenList.add(t);
+					if (sw.getValue().equals(t.getValue().toLowerCase()))
+						isStopWord = true;
 				}
+				if (!isStopWord)
+					filteredTokenList.add(t);
 			}
 			tokenList.clear();
 			tokenList.addAll(filteredTokenList);
@@ -138,14 +141,17 @@ public class TextProcessing {
 		public PerformStemming performStemming() {
 			PorterStemmer stemmer = new PorterStemmer();
 			List<Token> stemmedTokens = new ArrayList<>();
-			for (Token t : processor.getToken()) {
+			List<Token> tokens = processor.getToken();
+			
+			for (Token t : tokens) {
 				stemmer.setCurrent(t.getValue());
 				stemmer.stem();
-				stemmer.getCurrent();
+				t.setValue(stemmer.getCurrent());
+				
 				stemmedTokens.add(t);
 			}
-			processor.getToken().clear();
-			processor.getToken().addAll(stemmedTokens);
+			tokens.clear();
+			tokens.addAll(stemmedTokens);
 			return this;
 		}
 

@@ -1,0 +1,4 @@
+Internal DSLs
+Use a general purpose programming language to provide an API that allows the users to interpret the program text.
+A DSL is internal if it is implemented as a library within a host GPL.
+The implementation reuses the concrete syntax, static and execution semantics of the host language.
