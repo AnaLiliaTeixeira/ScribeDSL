@@ -1,7 +1,6 @@
 package scribedsl.dsl;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -99,7 +98,7 @@ public class TextProcessing {
 				StringBuilder sb = new StringBuilder();
 				String line;
 				while ((line = br.readLine()) != null) {
-					sb.append(line);
+					sb.append(line).append(" ");
 				}
 				withData(sb.toString());
 			} catch (IOException e) {
