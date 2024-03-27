@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EMap;
-import org.tartarus.snowball.ext.PorterStemmer;
 
+import opennlp.tools.stemmer.PorterStemmer;
 import scribedsl.ProcessedData;
 import scribedsl.Processor;
 import scribedsl.ScribedslFactory;
@@ -143,9 +143,9 @@ public class TextProcessing {
 			List<Token> tokens = processor.getToken();
 			
 			for (Token t : tokens) {
-				stemmer.setCurrent(t.getValue());
-				stemmer.stem();
-				t.setValue(stemmer.getCurrent());
+				
+				stemmer.stem(t.getValue());
+				t.setValue(stemmer.toString());
 				
 				stemmedTokens.add(t);
 			}

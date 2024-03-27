@@ -8,6 +8,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/Users/pauloteixeira/Library/CloudStorage/OneDrive-Pessoal/MEI/2º Semestre/Linguagens de Domínio/lucene-snowball-3.0.2.jar"/>
+	<classpathentry kind="lib" path="lib/opennlp-tools-2.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.36.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
