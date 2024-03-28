@@ -82,10 +82,6 @@ public class TextProcessing {
 				e.printStackTrace();
 			}
 		}
-		
-		public void sayHello() {
-			System.out.println("Hello!!");
-		}
 
 		public void withData(String textName) {
 			Text text = factory.createText();
@@ -146,7 +142,6 @@ public class TextProcessing {
 				
 				stemmer.stem(t.getValue());
 				t.setValue(stemmer.toString());
-				
 				stemmedTokens.add(t);
 			}
 			tokens.clear();
@@ -171,14 +166,6 @@ public class TextProcessing {
 		@Override
 		public ProcessedData build() {
 			return processedData;
-		}
-		
-		public Processor getProcessor() {
-			return processor;
-		}
-
-		public void setProcessor(Processor processor) {
-			this.processor = processor;
 		}
 	}
 }

@@ -93,6 +93,11 @@ public class ScribedslTest {
 			System.out.print("\"" + t.getValue() + "\", ");
 		}
 		System.out.print("]\n");
+		
+		if (hasStopWords(tokens, processedData))
+			System.out.println("This list has stop words.");		
+		else
+			System.out.println("This list doesn't have stop words.");		
 	}
 
 	public static void printListAnalyseFrequency(List<Token> tokens, ProcessedData processedData) {
@@ -103,5 +108,19 @@ public class ScribedslTest {
 			System.out.print("(\"" + e.getKey() + "\", " + e.getValue() + "), ");
 		}
 		System.out.print("]\n");
+	}
+	
+	public static boolean hasStopWords(List<Token> tokens, ProcessedData processedData) {
+		tokens = processedData.getProcessor().getToken();
+		List<StopWord> stopWords = processedData.getProcessor().getStopword();
+		
+		for (Token t : tokens) {
+			for (StopWord sw : stopWords) {
+				if (sw.getValue().equals(t.getValue().toLowerCase()))
+					return true;
+			}
+		}
+		
+		return false;
 	}
 }
